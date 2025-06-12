@@ -1,7 +1,7 @@
 import numpy as np
 from numpy.typing import NDArray
 
-from common.activation_function import sigmoid, identify
+from common.activation_function import sigmoid, identity
 
 
 def init_network() -> tuple[dict[int, NDArray], dict[int, NDArray]]:
@@ -32,7 +32,7 @@ def forward(network: tuple[dict[int, NDArray], dict[int, NDArray]], x: NDArray) 
 
     w = weights[layer_count]
     b = bias[layer_count]
-    active = identify(active @ w + b)
+    active = identity(active @ w + b)
 
     return active
 

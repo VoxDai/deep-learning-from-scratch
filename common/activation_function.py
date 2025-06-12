@@ -14,7 +14,7 @@ def relu(x: NDArray) -> NDArray:
     return np.maximum(x, 0)
 
 
-def identify(x: NDArray) -> NDArray:
+def identity(x: NDArray) -> NDArray:
     return x
 
 
