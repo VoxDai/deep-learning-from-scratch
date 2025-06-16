@@ -98,20 +98,17 @@ def _change_one_hot_label(X):
     return T
 
 
-def load_mnist(normalize=True, flatten=True, one_hot_label=False):
-    """MNISTデータセットの読み込み
+def load_mnist(normalize: bool = True,
+               flatten: bool = True,
+               one_hot_label: bool = False) -> tuple:
+    """
+    Load the MNIST dataset.
 
-    Parameters
-    ----------
-    normalize : 画像のピクセル値を0.0~1.0に正規化する
-    one_hot_label :
-        one_hot_labelがTrueの場合、ラベルはone-hot配列として返す
-        one-hot配列とは、たとえば[0,0,1,0,0,0,0,0,0,0]のような配列
-    flatten : 画像を一次元配列に平にするかどうか
+    :param normalize: Whether to normalize the image pixel values.
+    :param flatten: Whether to flatten the images into one-dimensional arrays.
+    :param one_hot_label: If True, labels are returned as one-hot encoded arrays. A one-hot array is, for example, `[0,0,1,0,0,0,0,0,0,0]`.
 
-    Returns
-    -------
-    (訓練画像, 訓練ラベル), (テスト画像, テストラベル)
+    :return: The dataset in shape of `((training_images, training_labels), (test_images, test_labels))`
     """
     if not os.path.exists(save_file):
         init_mnist()
