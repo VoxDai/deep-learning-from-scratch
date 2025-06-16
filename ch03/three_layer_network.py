@@ -35,10 +35,3 @@ def forward(network: tuple[dict[int, NDArray], dict[int, NDArray]], x: NDArray) 
     active = identity(active @ w + b)
 
     return active
-
-
-if __name__ == '__main__':
-    x = np.array([1.0, 0.5])
-    y = forward(init_network(), x)
-
-    print(y)
