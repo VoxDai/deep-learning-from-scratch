@@ -16,3 +16,8 @@ def relu(x: NDArray) -> NDArray:
 
 def identify(x: NDArray) -> NDArray:
     return x
+
+
+def softmax(x: NDArray) -> NDArray:
+    x -= x.max()
+    return np.exp(x) / np.exp(x).sum()
